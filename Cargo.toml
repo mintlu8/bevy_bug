@@ -1,0 +1,9 @@
+[package]
+name = "bevy_bug"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.15.1"
+bevy_defer = "0.13.2"
+image = { version = "0.25.5", default-features = false, features = ["png"] }
