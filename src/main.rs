@@ -47,6 +47,7 @@ fn main() {
     let img = img.id();
     app.spawn_task(async move {
         AsyncWorld.sleep(2.).await;
+        // Update the image.
         AsyncWorld.run_cached_system(
             move |mut assets: ResMut<Assets<Image>>| {
                 if let Some(img) = assets.get_mut(img) {
@@ -61,6 +62,7 @@ fn main() {
             }
         )?;
         AsyncWorld.sleep(2.).await;
+        // Show the image has updated, despite the display did not.
         AsyncWorld.run_cached_system(
             move |mut assets: ResMut<Assets<Image>>| {
                 if let Some(img) = assets.get_mut(img) {
